@@ -7,7 +7,7 @@ class jupyterhub::install {
   user { $::jupyterhub::jupyterhub_username:
     ensure => present,
     password => '!!',
-    home => '/var/lib/jupyterhub',
+    home => $::jupyterhub::jupyterhub_dir,
     manage_home => true
   }
   ->
