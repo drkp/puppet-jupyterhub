@@ -46,8 +46,6 @@ class jupyterhub::install {
     require    => Python::Pyvenv[ $::jupyterhub::pyvenv ],
   }
 
-  ensure_packages(['nodejs-legacy'])
-
     package { 'configurable-http-proxy':
     ensure   => 'present',
       provider => 'npm',
