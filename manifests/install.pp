@@ -41,7 +41,7 @@ class jupyterhub::install {
   ensure_packages(['nodejs-legacy'])
 
   class { 'nodejs': }
-
+  ->
   package { 'configurable-http-proxy':
     ensure   => 'present',
     provider => 'npm',
