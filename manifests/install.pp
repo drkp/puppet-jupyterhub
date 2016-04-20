@@ -3,6 +3,7 @@
 # This class is called from jupyterhub for install.
 #
 class jupyterhub::install {
+  include ::nodejs
 
   user { $::jupyterhub::jupyterhub_username:
     ensure => present,
@@ -47,10 +48,9 @@ class jupyterhub::install {
 
   ensure_packages(['nodejs-legacy'])
 
-  class { 'nodejs': }
-  ->
-  package { 'configurable-http-proxy':
+    package { 'configurable-http-proxy':
     ensure   => 'present',
-    provider => 'npm',
+      provider => 'npm',
+      require => Class["nodejs"]
   }
 }
