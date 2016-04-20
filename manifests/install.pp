@@ -8,7 +8,7 @@ class jupyterhub::install {
     ensure => present,
     password => '!!',
     home => $::jupyterhub::jupyterhub_dir,
-    manage_home => true
+    managehome => true
   }
   ->
   file { $::jupyterhub::jupyterhub_dir:
