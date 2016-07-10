@@ -1,2 +1,4 @@
 c.JupyterHub.spawner_class='sudospawner.SudoSpawner'
 c.SudoSpawner.sudospawner_path = '<%= scope['jupyterhub::pyvenv'] %>/bin/sudospawner'
+c.c.JupyterHub.ssl_key = '<%= scope['jupyterhub::ssl_key_path'] %>'
+c.c.JupyterHub.ssl_cert = '<%= scope['jupyterhub::ssl_cert_path'] %>'

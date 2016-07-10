@@ -16,6 +16,8 @@ class jupyterhub (
   $jupyterhub_dir         = $::jupyterhub::params::jupyterhub_dir,
   $pyvenv                 = $::jupyterhub::params::pyvenv,
   $allowed_users          = $::jupyterhub::params::allowed_users,
+  $ssl_key_path           = $::jupyterhub::params::ssl_key_path,
+  $ssl_cert_path          = $::jupyterhub::params::ssl_cert_path,
 ) inherits ::jupyterhub::params {
 
   # validate parameters here

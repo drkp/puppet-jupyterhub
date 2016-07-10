@@ -4,6 +4,8 @@
 # It sets variables according to platform.
 #
 class jupyterhub::params {
+  $ssl_key_path               = undef
+  $ssl_cert_path              = undef
   case $::osfamily {
     'Debian': {
       $service_name           = 'jupyterhub'
