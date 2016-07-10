@@ -20,7 +20,7 @@ class jupyterhub::install {
   ->
   python::pyvenv { $::jupyterhub::pyvenv:
     ensure  => present,
-    version => 'system',
+    version => '3.4',
     owner   => $::jupyterhub::jupyterhub_username,
   }
 
