@@ -3,7 +3,8 @@
 # This class is called from jupyterhub for install.
 #
 class jupyterhub::install {
-  include ::nodejs
+  require ::python
+  require ::nodejs
 
   user { $::jupyterhub::jupyterhub_username:
     ensure => present,
